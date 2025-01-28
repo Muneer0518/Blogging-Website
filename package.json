@@ -2,6 +2,7 @@
   "name": "blogging-website",
   "version": "1.0.0",
   "description": "A blogging website with Home, Blog, and Contact Us pages.",
+  "main": "src/index.html",
   "scripts": {
     "lint:html": "htmlhint src/**/*.html",
     "lint:css": "stylelint styles/**/*.css",
@@ -12,5 +13,10 @@
   "devDependencies": {
     "htmlhint": "^0.16.0",
     "stylelint": "^15.10.0"
+  },
+  "targets": {
+    "default": {
+      "source": "src/index.html"
+    }
   }
 }
