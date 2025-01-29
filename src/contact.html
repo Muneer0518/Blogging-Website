@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="../styles/contact.css">
 </head>
 <body>
-    <!-- Your content goes here -->
+    <header>
+        <div class="logo">MyBlog</div>
+        <nav>
+            <a href="../home/index.html">Home</a>
+            <a href="../blog/index.html">Blog</a>
+            <a href="../contact/index.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <section class="contact-form">
+        <h1>Contact Us</h1>
+        <form action="#">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 My Blog. All rights reserved.</p>
+    </footer>
 </body>
 </html>
