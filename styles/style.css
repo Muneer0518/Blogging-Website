@@ -1,63 +1,114 @@
-/* Reset some default styles */
-* {
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Apply a background color and text style for the whole page */
-body {
-  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  line-height: 1.6;
-  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 /* Header styling */
 header {
   background-color: #333;
   color: #fff;
-  padding: 20px;
-  text-align: center;
+  padding: 20px 0;
 }
 
 header h1 {
   font-size: 2.5em;
-}
-
-/* Main content area styling */
-main {
-  margin-top: 20px;
+  margin: 0;
   text-align: center;
 }
 
-main p {
+nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
   font-size: 1.2em;
-  margin-top: 10px;
-  color: #555;
+}
+
+/* Main section */
+main {
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+.hero {
+  background-color: #007BFF;
+  color: #fff;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.hero h2 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.blog-intro {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.blog-intro h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.blog-intro p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Footer styling */
 footer {
-  text-align: center;
-  padding: 10px;
   background-color: #333;
   color: #fff;
-  margin-top: 30px;
+  padding: 20px 0;
+  text-align: center;
 }
 
-/* Navigation styling (if added in the future) */
-nav {
-  margin-top: 20px;
+footer p {
+  font-size: 1em;
 }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-}
+/* Media Queries */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
 
-nav a:hover {
-  text-decoration: underline;
+  .hero h2 {
+    font-size: 1.8em;
+  }
+
+  .blog-intro h2 {
+    font-size: 1.8em;
+  }
 }
