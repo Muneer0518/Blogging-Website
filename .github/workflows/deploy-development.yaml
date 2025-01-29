@@ -5,32 +5,48 @@ on:
     branches:
       - develop  # Deploy when you push to the 'develop' branch
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       # Step 1: Checkout the repository to get your code
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Step 2: Set up Node.js (for Parcel build)
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '16'  # You can change the version if needed
 
-      # Step 3: Install dependencies (if any)
+      # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install  # This installs any packages if needed
+        run: npm install  # This installs necessary packages
 
-      # Step 4: Build the project (this creates the 'dist/' folder with final files)
+      # Step 4: Build the project (this creates the 'dist/' folder)
       - name: Build project
-        run: npx parcel build src/index.html  # This will output to 'dist/' folder by default
+        run: npx parcel build src/index.html --dist-dir dist  # Outputs files to 'dist/' folder
 
-      # Step 5: Deploy the files to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      # Step 5: Upload the built files as an artifact for deployment
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          branch: gh-pages  # This is the branch to deploy to (can be 'gh-pages')
-          folder: dist  # Make sure to point to the 'dist/' folder, where Parcel outputs the files
+          path: dist  # Upload everything in the 'dist/' folder
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
