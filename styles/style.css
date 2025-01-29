@@ -1,63 +1,126 @@
-/* Reset some default styles */
+/* styles/home.css */
+
+/* Reset & Global Styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Apply a background color and text style for the whole page */
+/* Body */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
-  padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
 }
 
-/* Header styling */
+/* Header */
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
 }
 
-header h1 {
-  font-size: 2.5em;
-}
-
-/* Main content area styling */
-main {
-  margin-top: 20px;
-  text-align: center;
-}
-
-main p {
-  font-size: 1.2em;
-  margin-top: 10px;
-  color: #555;
-}
-
-/* Footer styling */
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
-  color: #fff;
-  margin-top: 30px;
-}
-
-/* Navigation styling (if added in the future) */
-nav {
-  margin-top: 20px;
+.logo {
+    font-size: 22px;
+    font-weight: bold;
 }
 
 nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
 }
 
-nav a:hover {
-  text-decoration: underline;
+nav a:hover, .active {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?nature,travel') no-repeat center center/cover;
+    color: white;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #c44222;
+}
+
+/* Latest Posts Section */
+.latest-posts {
+    background: white;
+    padding: 40px 20px;
+}
+
+.latest-posts h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.posts-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.post {
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 280px;
+}
+
+.post h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.post p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.post a {
+    color: #ff5733;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
 }
